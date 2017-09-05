@@ -1,0 +1,45 @@
+#!/bin/bash
+
+function print_help() {
+    echo Help:
+    echo "  ./prog input_path"
+}
+
+function do_ordering() {
+    if [ -d $1 ]; then
+        create_ordered_files $1
+    else
+        echo $1: not directory
+        exit 1
+    fi
+}
+
+function create_ordered_files() {
+    current_dir=`pwd`
+    input_full_path=`echo $current_dir/$1`
+    output_dir=`dirname $input_full_path`/output
+    mkdir -p $output_dir
+
+    files=`ls $1`
+    for i in $files; do
+        extension=`echo $i | awk -F . '{print $NF}'`
+        if [ -d $output_dir/$extension ]; then
+            cp $1/$i $output_dir/$extension
+        else
+            mkdir $output_dir/$extension
+            cp $1/$i $output_dir/$extension
+        fi
+    done
+}
+
+function main() {
+    if [ 1 -eq $# ]; then
+        do_ordering $1
+        return 0
+    else
+        print_help
+        return 1
+    fi
+}
+
+main $@
