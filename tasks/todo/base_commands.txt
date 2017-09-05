@@ -1,0 +1,39 @@
+ls      -l -R -h -a -A
+mkdir   -p
+touch
+cp      -r
+mv      (like cut, rename from Windows)
+cd      (with special variables .. . - ~)
+pwd
+chmod
+chgrp
+chown
+echo
+source
+head
+tail
+less
+grep
+find
+cat
+|
+>
+>>
+>&
+
+ps
+top
+
+export
+$PATH
+$?
+
+CTRL-A
+CTRL-E
+CTRL-R
+CTRL-W
+CTRL-U
+CTRL-K
+CTRL-Y
+CTRL-_
+CTRL-L
