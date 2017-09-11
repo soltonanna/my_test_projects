@@ -1,0 +1,58 @@
+MODES: 
+	normal:    ESQ or double ESQ
+			  :w - save
+			  :wq - save and exit
+			  :q! - exit without saving
+			  :q - just exit
+			  :! - bash command
+
+	insert:	   'i' in normal mode
+	replace: 'shift+r' in normal mode
+	visual:	   'v' in normal mode
+	visual block:  'ctrl+v' in normal mode
+	recording:  'q', 'register_key (a, s, d, f....)' in normal mode 
+			   run '@+register_key', or '@@' for repeating last record
+	
+COPY:
+	line copy:		yy
+	copy N line:	y, n-1, up/down
+	copy N symbols: y, n-1, left/right
+
+CUT/DELETE:
+	line delete:						   dd
+	delete N line:	  					   d, n-1, up/down
+	delete N symbols: 					   d, n-1, left/right
+	delete from current point to end line: shit+d
+
+PASTE:
+	paste (start from current point): 'shift+p'
+	paste (start from next point):    'p'
+
+UNDO: 'u'
+REDO: 'ctrl+r'
+
+UPPER_LOWER_CASE:
+	upper_case: in visual mode 'g, U'
+	lower_case: in visual mode 'g, u'
+	rev_case: in visual mode 'g, ~'
+			  in normal mode '~'
+	
+REPLACE_CHAR:
+	'r, TYPE'
+
+FIND:
+	'/......' in normal mode
+
+SUBSTITUTE:
+	'%s/from/to/mode'
+	mode:	'g' global
+			'gc'  'yes/no', 'n' to next
+
+COUNT:
+	'%s/input//n'
+
+GOTO:
+	N-th line:		':N'
+	go N step to:	'N up/down/left/right'
+	to begin:		'gg'
+	to end:			'shift+g' 
